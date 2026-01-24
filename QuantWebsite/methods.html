@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <title></title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><h2>π</h2></a>
+            </div>
+
+            <nav class="primary-nav" aria-label="Priary Navigation">
+                <ul>
+                    <li><a href="index.html">Home: What is Quant?</a></li>
+                    <li><a href="history.html">History & Landscape</a></li>
+                    <li><a href="methods.html">Core Math & Methods</a></li>
+                    <li><a href="strategies.html">Strategies & Evaluation</a></li>
+                    <li><a href="tooling.html">Careers & Tooling</a></li>
+                    <li class="button"><a href="mailto:gmanroper@gmail.com">Want to learn more?</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="wrapper">
+                <section>
+                    <h2>Core Methods</h2>
+
+                    <p><strong>Stochastic Calculus</strong> and Ito's Lemma</p>
+                    <ul>
+                        <li><strong>What it is:</strong> This is the "calculus of randomness." Financial markets don't move in smooth, predictable lines; they jump around randomly. Stochastic calculus, and its most famous tool <strong>Ito's Lemma,</strong> gives us the math to handle functions that depend on these random processes. It's famous for being the engine inside the Black-Scholes option pricing formula.</li>
+                        <li><strong>Assumption:</strong> It assumes the random "wiggles" of a stock price are like a "Brownian motion" (a random walk) with some underlying trend.</li>
+                        <li><strong>Failure Mode:</strong> It's not great at handling sudden, massive jumps (like a market crash), as it assumes motion is continuous (no teleporting).</li>
+                        <li><strong>Canonical Reference:</strong> Kiyosi Itô's 1944 paper, "Stochastic Integral".</li>
+                    </ul>
+
+                    <p><strong>Time Series Analysis (ARIMA)</strong> and Ito's Lemma</p>
+                    <ul>
+                        <li><strong>What it is:</strong> This is a way of forecasting something using only its own past data. An <strong>ARIMA</strong> model (built using the "Box-Jenkins method") looks at past trends and past forecast errors to make a new, better forecast. It's used to predict everything from sales to stock prices.</li>
+                        <li><strong>Assumption:</strong> The key assumption is that the process is "<strong>stationary</strong>"—meaning its statistical properties (like the average) don't change over time. If the data has a trend (like always going up), it must first be "differenced" (looking at the changes from day to day) to make it stationary.</li>
+                        <li><strong>Failure Mode:</strong> These models can be completely wrong if the underlying market structure suddenly changes (a "structural break"), like during the 2008 financial crisis or the 2020 pandemic. The past patterns no longer apply.</li>
+                        <li><strong>Canonical Reference:</strong> The 1970 book Time Series Analysis: Forecasting and Control by George Box and Gwilym Jenkins.</li>
+                    </ul>
+
+                    <p><strong>Machine Learning (ML)</strong> and Ito's Lemma</p>
+                    <ul>
+                        <li><strong>What it is:</strong> Think of it as "super-powered pattern finding." Instead of a human telling a model what to look for, an ML model (like a "Random Forest" or "Neural Network") sifts through massive amounts of data to find complex, hidden patterns on its own.</li>
+                        <li><strong>Assumption:</strong> It assumes that patterns found in the past data will, to some extent, repeat in the future.</li>
+                        <li><strong>Failure Mode: Overfitting.</strong>The model can get too smart and "memorize" the random noise in the past data instead of learning the true underlying pattern. This makes it look amazing in backtests but fail in live trading.</li>
+                    </ul>
+
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>©2025 Gray Agency. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

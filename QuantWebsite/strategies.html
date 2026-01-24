@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <title></title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><h2>π</h2></a>
+            </div>
+
+            <nav class="primary-nav" aria-label="Priary Navigation">
+                <ul>
+                    <li><a href="index.html">Home: What is Quant?</a></li>
+                    <li><a href="history.html">History & Landscape</a></li>
+                    <li><a href="methods.html">Core Math & Methods</a></li>
+                    <li><a href="strategies.html">Strategies & Evaluation</a></li>
+                    <li><a href="tooling.html">Careers & Tooling</a></li>
+                    <li class="button"><a href="mailto:gmanroper@gmail.com">Want to learn more?</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="wrapper">
+                <section>
+                    <p>A solid understanding of <strong>market microstructure</strong>, different <strong>asset classes</strong> (equities, fixed income, derivatives), and the fundamentals of <strong>portfolio theory</strong> is critical for applying models effectively.</p>
+                </section>
+
+                <section>
+                    <h3>Strategy Archetyoes</h3>
+
+                    <ul>
+                        <li><strong>Mean Reversion (Pairs Trading): </strong>This is a "bet on things returning to normal." The idea is to find two things that usually move together (like Coke and Pepsi stocks). If one suddenly shoots up while the other doesn't, you short the high one and buy the normal one, betting they will eventually snap back to their usual relationship.</li>
+                        <li><strong>Trend Following (Momentum): </strong>This is the opposite. It's a "bet on the trend continuing." The strategy is simple: buy things that have been going up and short things that have been going down.</li>
+                        <li><strong>Factor Investing: </strong>This involves buying stocks based on specific characteristics (or "factors") that are proven to be linked to higher returns over the long term, such as "Value" (buying cheap stocks) or "Quality" (buying stable, profitable companies).</li>
+                    </ul>
+
+                    <h3>How is a Strategy Evaluated</h3>
+
+                    <ul>
+                        <li><strong>Backtesting: </strong>The first step. You run your strategy on historical data to see if it would have worked in the past.</li>
+                        <li><strong>Sharpe Ratio: </strong>The most common metric. It's a single number that tells you how much return you earned for the amount of risk you took. A higher Sharpe Ratio is better.</li>
+                        <li><strong>Maximum Drawdown (Max DD): </strong>This measures the most money your strategy lost from its peak to its bottom during the backtest. It's a key measure of risk and pain.</li>
+                        <li><strong>Pitfalls (p-hacking): </strong>This is a major sin in quant finance. It's when you keep tweaking your model or testing new ideas until you finally find one that works on past data. You haven't found a real strategy; you've just found what happened to work by pure luck.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Strategy Deep Dive: Pairs Trading</h3>
+
+                    <p>This is a classic mean-reversion strategy.</p>
+
+                    <ul>
+                        <li><strong>Hypothesis: </strong>Two stocks that are very similar (e.g., in the same industry) are driven by the same economic forces, so their prices should move together over the long term. If their price ratio or spread temporarily diverges, it represents a trading opportunity.</li>
+                        <li><strong>Realistic Costs: </strong>A real strategy must account for <strong>transaction costs</strong> (fees to buy/sell) and <strong>shorting costs</strong> (fees to borrow a stock to sell it). These costs can easily eat up all the small profits if not managed.</li>
+                        <li><strong>Pitfalls: The relationship can break. </strong>The primary risk is that the divergence isn't temporary. One company might have genuinely bad news (like a scandal or failed product), and the stocks never "revert," leading to a large loss.<strong>Overcrowding: </strong>Because this strategy is so well-known, many quants are doing it. This competition can make the opportunities (the "alphas") disappear or become so small that they are unprofitable after costs.</li>
+                        <li><strong>Academic References: * Gatev, et al. (2006), "Pairs Trading: Performance of a Relative-Value Arbitrage Rule":</strong>This is the classic paper that "proved" the strategy worked, showing it generated significant excess returns from the 1960s to 2002.<strong>Do and Faff (2010), "Does Simple Pairs Trading Still Work?":</strong> This paper revisited the strategy and found that its profitability had declined significantly after 2002, likely due to higher trading costs and the strategy becoming more well-known.</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>©2025 Gray Agency. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

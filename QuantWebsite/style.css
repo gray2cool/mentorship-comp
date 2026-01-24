@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    border: #8f0b0b;
+    /* margin-top: 100px; */
+    max-inline-size: 1400px;
+    margin-inline: auto;
+    line-height: 1.8;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.center {
+    text-align: center;
+}
+
+header {
+    /* border: solid #000 5px; */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: 1000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.primary-nav a {
+    /* border: solid 5px #e1a6a6; */
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.primary-nav ul {
+    /* border: solid 5px #8f0b0b; */
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 30px 11px;
+}
+
+.logo a:hover,
+.logo a:focus-visible,
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+    /* border: solid 5px #000; */
+    color:#686666;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 20px;
+    margin: 40px 80px;
+    /* border: solid 5px #e1a6a6; */
+    text-decoration: none;
+}
+
+.button a:hover {
+    background-color: #626161;
+    color: #fff;
+}
+
+.button a {
+    font-family: serif;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #000;
+}
+
+.tc-layout {
+    display: grid;
+    /* border: red solid 5px; */
+    line-height: 1.8;
+    gap: 150px;
+    margin-block-end: 10px;
+    padding: 0px 150px;
+
+    @media (width>750px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.thc-layout {
+    margin-top: 10px;
+    display: grid;
+    /* border: red solid 5px; */
+    line-height: 1.8;
+    gap: 50px;
+    margin-block-end: 60px;
+    padding: 0px 200px;
+
+    @media (width>750px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.black-cbg {
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    line-height: 1.6;
+    border-radius: 25px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 5px;
+    /* border: red solid 5px; */
+}
+
+.black-bg {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+.vs {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 70px;
+}
+
+footer {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
