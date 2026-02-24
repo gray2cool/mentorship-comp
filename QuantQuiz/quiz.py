@@ -76,9 +76,9 @@ def navigate(mL, key):
         print(mL[index], responses[index]) 
         responses[index] = input("Response: ").lower 
  
-        print(key) 
-        print(responses) 
-        print(mL) 
+        # print(key) 
+        # print(responses) 
+        # print(mL) 
  
         if all(responses) and b<1: 
             return completedResponses(responses, mL, key) 
