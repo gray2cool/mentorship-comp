@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html dir="ltr">
     <head>
-        <title href="marketAnalyzer.html">Market Analyzer</title>
+        <title>Crypto Market Analyzer</title>
         <link href="style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
 
     <body class="wrapper">
         <header>
             <div>
-                <a href="marketAnalyzer.html">Market Analyzer</a>
+                <a href="marketAnalyzer.html">Crypto Market Analyzer</a>
             </div>
         </header>
         <div id="output"></div>
         <main>
             <div id="dashboard">
-                <!-- <div class="card">Price History: <div id="priceHistory"></div></div> -->
+                <div class="card chart-card">
+                    Price Time-Series Line Chart
+                    <canvas id="priceChart"></canvas>
+                </div>
                 <div class="card">Current Price: <div id="currentPrice"></div></div>
                 <div class="card">Total Return: <div id="totalReturn"></div></div>
-                <div class="card">Daily Changes: <div id="dailyReturns"></div></div>
+                <div class="card">Daily Changes: <div id="dailyReturns" class="scrollable"></div></div>
                 <div class="card">Volatility (Daily): <div id="volatility"></div></div>
                 <div class="card">Max Drawdown: <div id="maxDrawdown"></div></div>
             </div>
@@ -28,4 +32,4 @@
             <p>©2026 Gray Agency. All rights reserved.</p>
         </footer>
     </body>
-<html>
+</html>

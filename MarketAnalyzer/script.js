@@ -17,7 +17,12 @@ fetch(apiUrl, requestOptions)
     })
     .then(data => {
         const priceHistory = data.prices.map(item => item[1]);
+        const timestamps = data.prices.map(item => {
+            const date = new Date(item[0]);
+            return date.toLocaleDateString();
+        });
         updateDashboard(priceHistory);
+        renderChart(timestamps, priceHistory);
     })
     .catch(error => {
         console.error('Error:', error);
@@ -61,11 +66,11 @@ function updateDashboard(priceHistory) {
     let maxDrawdown = 0;
     priceHistory.forEach(price => {
         if (price > peak) {
-            peak = price; // Update the highest point reached 
+            peak = price;
         }
         let drawdown = (price - peak) / peak;
         if (drawdown < maxDrawdown) {
-            maxDrawdown = drawdown; // Track the largest drop
+            maxDrawdown = drawdown;
         }
     });
     console.log("Maximum Drawdown (%):", (maxDrawdown * 100).toFixed(2));
@@ -73,6 +78,48 @@ function updateDashboard(priceHistory) {
     tag.innerHTML += `${maxDrawdown.toPrecision(4)}`;
 
     console.log("Updated with live data:", priceHistory);
+}
+
+let priceChart;
+
+function renderChart(labels, dataPoints) {
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    
+    if (priceChart) {
+        priceChart.destroy();
+    }
+    
+    priceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Bitcoin Price (USD)',
+                data: dataPoints,
+                borderColor: '#0ea5e9',
+                backgroundColor: 'rgba(14, 165, 233, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Date' }
+                },
+                y: {
+                    title: { display: true, text: 'Price (USD)' }
+                }
+            }
+        }
+    });
 }
 
 // // let priceHistory = [99, 105, 98, 110, 120, 115, 125];
