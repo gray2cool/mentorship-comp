@@ -1,4 +1,4 @@
-require('dotenv').config();
+const apiKey = API_KEY;
 const apiKey = process.env.API_KEY;
 const apiUrl = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily';
 
